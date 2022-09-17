@@ -2,3 +2,4 @@
 
 **JavaScript learning in SoftUni**
 - typeof **Programming Basics** -> successfully finished
+- typeof **Programming Fundamentals with JavaScript** -> successfully finished
