@@ -1,9 +1,9 @@
 import { html } from "../../node_modules/lit-html/lit-html.js";
+import { login } from '../api/user.js';
 import { createSubmitHandler } from "../util.js";
 
 
 export const loginTemplate = (onSubmit) => html`
-<!--Login-->
 <section id="loginPage">
     <form @submit=${onSubmit}>
         <fieldset>
@@ -18,7 +18,7 @@ export const loginTemplate = (onSubmit) => html`
             <button type="submit" class="login">Login</button>
 
             <p class="field">
-                <span>If you don't have profile click <a href="#">here</a></span>
+                <span>If you don't have profile click <a href="/register">here</a></span>
             </p>
         </fieldset>
     </form>
@@ -26,6 +26,12 @@ export const loginTemplate = (onSubmit) => html`
 
 `;
 
-export function loginPage(ctx, onSubmit) {
-    ctx.render(loginTemplate(createSubmitHandler(ctx, onSubmit)))
+export function loginPage(ctx) {
+    ctx.render(loginTemplate(createSubmitHandler(ctx, onSubmit)));
+}
+
+async function onSubmit(ctx, data, event) {
+  await login(data.email, data.password);
+  event.target.reset();
+  ctx.page.redirect("/");
 }

@@ -25,7 +25,6 @@ export function createSubmitHandler(ctx, handler) {
     const formData = Object.fromEntries(new FormData(event.target));
 
     handler(ctx, formData, event);
-    console.log(ctx, formData, event.target);
   };
 }
 
