@@ -3,9 +3,9 @@ import * as api from "./api.js";
 const endpoints = {
   getCatalogInfo: "/data/albums?sortBy=_createdOn%20desc&distinct=name",
   create: "/data/albums",
-  details: '/data/albums/',
-  onDel: '/data/albums/',
-  update: '/data/albums/'
+  details: "/data/albums/",
+  onDel: "/data/albums/",
+  update: "/data/albums/",
 };
 
 export async function getAll() {
@@ -17,13 +17,13 @@ export async function toCreate(data) {
 }
 
 export async function onDetails(id) {
-    return api.get(endpoints.details + id)
+  return api.get(endpoints.details + id);
 }
 
 export async function onDelete(id) {
-    return api.del(endpoints.onDel + id)
+  return api.del(endpoints.onDel + id);
 }
 
 export async function onUpdate(id, data) {
-    return api.put(endpoints.update + id, data)
+  return api.put(endpoints.update + id, data);
 }

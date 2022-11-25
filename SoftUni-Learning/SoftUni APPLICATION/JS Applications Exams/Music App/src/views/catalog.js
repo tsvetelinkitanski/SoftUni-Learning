@@ -12,7 +12,7 @@ const catalogTemplate = (info, ctx) => html`
 
 const cardBox = (card, ctx) => html`
 <div class="card-box">
-    <img src="${card.imgUrl}" />
+    <img src="${card.imgUrl}"/>
     <div>
         <div class="text-center">
             <p class="name">Name:${card.name}</p>

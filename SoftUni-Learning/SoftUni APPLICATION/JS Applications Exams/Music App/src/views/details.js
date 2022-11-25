@@ -20,7 +20,7 @@ const detailsTemplate = (info, owner, onClick) => html`
         ${owner
           ? html` <div class="actionBtn">
               <a href="/edit/${info._id}" class="edit">Edit</a>
-              <a @click="${onClick}" href="javascript:void(0)" class="remove">Delete</a>
+              <a @click=${onClick} href="javascript:void(0)" class="remove">Delete</a>
             </div>`
           : nothing}
       </div>
